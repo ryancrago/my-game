@@ -1,5 +1,5 @@
 from numpy import array
-import rooms
+from rooms import Rooms, MOVEMENT, r
 import pickle
 actions = ("quit"
            "save"
@@ -45,8 +45,8 @@ player = Player()
 def main(player):
     choice = None
     while choice != "quit":
-        room = rooms.get(player.position, "Invalid room setting - something broke")
-        print(room.description())
+        room = MOVEMENT.get(player.position, "Invalid room setting - something broke")
+        print(r.description())
         choice = valid_input()
         if choice == "quit":
             print("Thanks for playing!")
